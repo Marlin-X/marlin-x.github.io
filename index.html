@@ -55,6 +55,7 @@
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form action="https://formspree.io/marlindecoy@gmail.com" method="post">
+              <input type="hidden" name="_subject" id="_subject" value="Marlin-X Contact Form">
               <input type="hidden" name="_next" value="http://www.marlin-x.com/thanks.html" />
               <div class="form-row">
                 <div class="col-12 col-md-12 mb-1 mb-md-1">
@@ -63,7 +64,7 @@
               </div>
               <div class="form-row">
                 <div class="col-12 col-md-12 mb-1 mb-md-1">
-                  <input name="_replyto" type="email" class="form-control form-control-lg" placeholder="Your Email">
+                  <input name="_replyto" id="email" type="email" class="form-control form-control-lg" placeholder="Your Email">
                 </div>
               </div>
               <div class="form-row">
@@ -96,6 +97,15 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      var $sub = $("#_subject");
+      $("#email").on("input", function() {
+        $sub.val("Marlin-X Contact Form (" + $(this).val() + ")");
+      });
+    });
+    </script>
 
   </body>
 
